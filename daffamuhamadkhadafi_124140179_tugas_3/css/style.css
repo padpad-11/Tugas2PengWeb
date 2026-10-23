@@ -1,0 +1,261 @@
+/* ===== Reset & Base ===== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background-color: #eef2f7;
+  color: #263238;
+  line-height: 1.5;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ===== Header & Footer ===== */
+.site-header {
+  background-color: #1e3a8a;
+  color: #ffffff;
+  padding: 24px 32px;
+  text-align: center;
+}
+
+.site-header h1 {
+  margin: 0 0 6px 0;
+  font-size: 1.6rem;
+}
+
+.site-header p {
+  margin: 0;
+  font-size: 0.95rem;
+  opacity: 0.85;
+}
+
+.site-footer {
+  margin-top: auto;
+  text-align: center;
+  padding: 16px;
+  font-size: 0.8rem;
+  color: #607d8b;
+  background-color: #e3e9f1;
+}
+
+/* ===== Layout utama (CSS Grid) ===== */
+.layout {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 24px;
+  padding: 32px;
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.layout-single {
+  grid-template-columns: 1fr;
+  max-width: 760px;
+}
+
+@media (max-width: 760px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===== Box ===== */
+.box {
+  background-color: #ffffff;
+  border: 1px solid #d7deea;
+  border-radius: 10px;
+  padding: 20px 24px;
+  box-shadow: 0 2px 6px rgba(30, 58, 138, 0.08);
+}
+
+.box h2 {
+  margin-top: 0;
+  color: #1e3a8a;
+  border-bottom: 2px solid #cfd8e3;
+  padding-bottom: 8px;
+}
+
+.box + .box {
+  margin-top: 24px;
+}
+
+.success-box {
+  border-left: 5px solid #2e7d32;
+}
+
+/* ===== Tabel ===== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 16px;
+}
+
+caption {
+  caption-side: top;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+th,
+td {
+  border: 1px solid #d7deea;
+  padding: 10px 12px;
+  text-align: left;
+}
+
+th {
+  background-color: #1e3a8a;
+  color: #ffffff;
+  width: 40%;
+}
+
+.schedule-table th {
+  width: auto;
+}
+
+/* Zebra stripes */
+tr:nth-child(even) td {
+  background-color: #f4f7fb;
+}
+
+/* Hover effect pada baris */
+tbody tr:hover td,
+tr:hover td {
+  background-color: #dbe6fb;
+  transition: background-color 0.15s ease-in-out;
+}
+
+/* Status pada tabel tiket */
+.status {
+  font-weight: 600;
+}
+
+.status-ok {
+  color: #2e7d32;
+}
+
+.status-pending {
+  color: #e65100;
+}
+
+/* ===== Formulir ===== */
+.form-group {
+  margin-bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-group label,
+.form-group legend {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #37474f;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="date"],
+select,
+textarea {
+  padding: 10px 12px;
+  border: 1px solid #c7d0dd;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-family: inherit;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: #1e3a8a;
+  box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.15);
+}
+
+fieldset.form-group {
+  border: 1px solid #c7d0dd;
+  border-radius: 6px;
+  padding: 12px 14px;
+}
+
+.inline-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: normal;
+  margin-right: 16px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+.hint {
+  font-size: 0.85rem;
+  background-color: #eef2fb;
+  border: 1px dashed #aebbd6;
+  border-radius: 6px;
+  padding: 10px 12px;
+}
+
+.hint code {
+  background-color: #dbe6fb;
+  padding: 1px 5px;
+  border-radius: 4px;
+}
+
+/* ===== Tombol (Flexbox) ===== */
+.form-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+button[type="submit"] {
+  background-color: #1e3a8a;
+  color: #ffffff;
+}
+
+button[type="submit"]:hover {
+  background-color: #16306e;
+}
+
+.btn-secondary {
+  background-color: #e0e5ec;
+  color: #37474f;
+}
+
+.btn-secondary:hover {
+  background-color: #cfd8e3;
+}
+
+/* ===== Link kembali ===== */
+.back-link {
+  display: inline-block;
+  margin-top: 8px;
+  color: #1e3a8a;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}

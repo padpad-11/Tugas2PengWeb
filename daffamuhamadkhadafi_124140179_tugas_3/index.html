@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pendaftaran Seminar Web Development</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="page">
+
+    <header class="site-header">
+      <h1>Seminar "Membangun Web Modern dengan HTML, CSS & JavaScript"</h1>
+      <p>Teknik Informatika &middot; Institut Teknologi Sumatera</p>
+    </header>
+
+    <main class="layout">
+
+      <!-- Kolom kiri: informasi acara (box + table) -->
+      <section class="box info-box">
+        <h2>Informasi Acara</h2>
+        <table class="info-table">
+          <tr>
+            <th>Tanggal</th>
+            <td>15 November 2025</td>
+          </tr>
+          <tr>
+            <th>Waktu</th>
+            <td>09.00 &ndash; 12.00 WIB</td>
+          </tr>
+          <tr>
+            <th>Lokasi</th>
+            <td>Auditorium ITERA</td>
+          </tr>
+          <tr>
+            <th colspan="2">Fasilitas Peserta</th>
+          </tr>
+          <tr>
+            <td>Sertifikat</td>
+            <td>Snack &amp; Makan Siang</td>
+          </tr>
+          <tr>
+            <td>Modul Praktikum</td>
+            <td>E-Certificate</td>
+          </tr>
+        </table>
+
+        <h3>Rangkaian Acara</h3>
+        <table class="info-table schedule-table">
+          <tr>
+            <th>Waktu</th>
+            <th>Kegiatan</th>
+          </tr>
+          <tr>
+            <td>09.00</td>
+            <td>Registrasi Ulang</td>
+          </tr>
+          <tr>
+            <td>09.30</td>
+            <td>Pembukaan</td>
+          </tr>
+          <tr>
+            <td>10.00</td>
+            <td>Materi: Tabel &amp; Formulir</td>
+          </tr>
+          <tr>
+            <td>11.00</td>
+            <td>Materi: Layout &amp; Web Media</td>
+          </tr>
+          <tr>
+            <td>12.00</td>
+            <td>Penutupan</td>
+          </tr>
+        </table>
+      </section>
+
+      <!-- Kolom kanan: form pendaftaran -->
+      <section class="box form-box">
+        <h2>Formulir Pendaftaran</h2>
+        <p class="hint">
+          Form ini menggunakan <code>method="get"</code> sehingga data yang
+          kamu isi akan dikirim sebagai <strong>query string</strong> menuju
+          halaman detail pendaftar.
+        </p>
+
+        <form action="detail.html" method="get" class="registration-form">
+
+          <div class="form-group">
+            <label for="nama">Nama Lengkap</label>
+            <input type="text" id="nama" name="nama" placeholder="Masukkan nama lengkap" required>
+          </div>
+
+          <div class="form-group">
+            <label for="nim">NIM</label>
+            <input type="text" id="nim" name="nim" pattern="[0-9]{9}" title="NIM terdiri dari 9 digit angka" placeholder="123456789" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="nama@student.itera.ac.id" required>
+          </div>
+
+          <div class="form-group">
+            <label for="prodi">Program Studi</label>
+            <select id="prodi" name="prodi" required>
+              <option value="">-- Pilih Program Studi --</option>
+              <optgroup label="Fakultas Teknologi Industri">
+                <option value="informatika">Informatika</option>
+                <option value="teknik-elektro">Teknik Elektro</option>
+              </optgroup>
+              <optgroup label="Fakultas Sains">
+                <option value="matematika">Matematika</option>
+                <option value="fisika">Fisika</option>
+              </optgroup>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="angkatan">Angkatan</label>
+            <input list="angkatan-list" id="angkatan" name="angkatan" placeholder="Pilih / ketik tahun angkatan">
+            <datalist id="angkatan-list">
+              <option value="2022">
+              <option value="2023">
+              <option value="2024">
+              <option value="2025">
+            </datalist>
+          </div>
+
+          <div class="form-group">
+            <label for="tanggal_lahir">Tanggal Lahir</label>
+            <input type="date" id="tanggal_lahir" name="tanggal_lahir">
+          </div>
+
+          <fieldset class="form-group">
+            <legend>Jenis Kelamin</legend>
+            <label class="inline-label">
+              <input type="radio" name="gender" value="L" checked> Laki-laki
+            </label>
+            <label class="inline-label">
+              <input type="radio" name="gender" value="P"> Perempuan
+            </label>
+          </fieldset>
+
+          <fieldset class="form-group">
+            <legend>Minat Materi</legend>
+            <label class="inline-label">
+              <input type="checkbox" name="minat" value="html-css"> HTML &amp; CSS
+            </label>
+            <label class="inline-label">
+              <input type="checkbox" name="minat" value="javascript"> JavaScript
+            </label>
+            <label class="inline-label">
+              <input type="checkbox" name="minat" value="backend"> Backend/Server
+            </label>
+          </fieldset>
+
+          <div class="form-group">
+            <label for="pesan">Pesan / Pertanyaan (opsional)</label>
+            <textarea id="pesan" name="pesan" rows="3" placeholder="Tulis pertanyaan atau pesan untuk panitia"></textarea>
+          </div>
+
+          <div class="form-actions">
+            <button type="submit">Daftar Sekarang</button>
+            <button type="reset" class="btn-secondary">Reset</button>
+          </div>
+        </form>
+      </section>
+
+    </main>
+
+    <footer class="site-footer">
+      <p>&copy; 2025 Panitia Seminar Web Development &middot; Informatika ITERA</p>
+    </footer>
+
+  </div>
+</body>
+</html>
